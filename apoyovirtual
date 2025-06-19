@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Manejo del Dolor Pediátrico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 320px;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .pain-level-box {
+            position: relative;
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .pain-level-box:not(:last-child)::after {
+            content: '⬇️';
+            position: absolute;
+            bottom: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#00446A] mb-4">El Desafío del Dolor Pediátrico</h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                El manejo adecuado del dolor en niños es una piedra angular de la ética médica. La falta de analgesia adecuada puede alterar el desarrollo del sistema nervioso y la percepción futura del dolor. Esta infografía explora los dos pilares para un manejo eficaz: una **evaluación precisa** y un **tratamiento multimodal**.
+            </p>
+        </header>
+
+        <section id="niveles-dolor" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0072B2] mb-8">Niveles de Dolor y Estrategias Terapéuticas</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-center mb-6 text-slate-700">La intensidad del dolor guía la elección de las intervenciones. Un enfoque escalonado y multimodal asegura un alivio eficaz y seguro. Es importante recordar que este plan es **flexible y adaptativo**; un paciente puede requerir intervenciones de un nivel superior o inferior a su dolor categorizado debido a condiciones individuales, comorbilidades o la respuesta al tratamiento.</p>
+                
+                <div class="flex flex-col items-center justify-center space-y-8 mt-8">
+
+                    <div class="pain-level-box flex-1 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 border-t-4 border-[#56B4E9]">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Dolor Leve <span class="text-3xl">😊</span></h3>
+                        <p class="text-sm text-slate-600 mb-4 text-center">Ejemplos: Dolor dental leve, dolor post-vacuna, golpes menores, cefalea tensional.</p>
+                        <h4 class="font-semibold text-[#0072B2] mb-2 text-center">Terapias Recomendadas:</h4>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">💊</span>
+                                <p class="text-sm text-slate-700 font-medium">Paracetamol</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🩹</span>
+                                <p class="text-sm text-slate-700 font-medium">AINEs</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🧸</span>
+                                <p class="text-sm text-slate-700 font-medium">No Farmacológicas</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-4 text-center">**Técnicas No Farmacológicas:** Estrategias que no involucran medicamentos para aliviar el dolor, como la distracción (juegos, cuentos), la aplicación de frío o calor, masajes suaves, y el apoyo emocional y la comodidad física.</p>
+                    </div>
+
+                    <div class="pain-level-box flex-1 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 border-t-4 border-[#E69F00]">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Dolor Moderado <span class="text-3xl">😐</span></h3>
+                        <p class="text-sm text-slate-600 mb-4 text-center">Ejemplos: Fractura simple, dolor postoperatorio moderado, otitis media aguda.</p>
+                        <h4 class="font-semibold text-[#0072B2] mb-2 text-center">Terapias Recomendadas:</h4>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">💊</span>
+                                <p class="text-sm text-slate-700 font-medium">Paracetamol + AINEs</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">💉</span>
+                                <p class="text-sm text-slate-700 font-medium">Anestésicos Locales</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🧠</span>
+                                <p class="text-sm text-slate-700 font-medium">Coadyuvantes</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🧸</span>
+                                <p class="text-sm text-slate-700 font-medium">No Farmacológicas</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-4 text-center">**Coadyuvantes:** Medicamentos con mecanismos de acción distintos a los analgésicos tradicionales, que potencian la analgesia o tratan componentes específicos del dolor (ej. dolor neuropático), como la Ketamina, Sulfato de Magnesio, Dexmedetomidina, Antidepresivos y Anticonvulsivantes.</p>
+                    </div>
+
+                    <div class="pain-level-box flex-1 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 border-t-4 border-[#00446A]">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Dolor Severo <span class="text-3xl">😭</span></h3>
+                        <p class="text-sm text-slate-600 mb-4 text-center">Ejemplos: Quemaduras graves, dolor postoperatorio mayor (ej. cirugía cardíaca, torácica, neurovertebral o abdominal), dolor oncológico severo.</p>
+                        <h4 class="font-semibold text-[#0072B2] mb-2 text-center">Terapias Recomendadas:</h4>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">➕</span>
+                                <p class="text-sm text-slate-700 font-medium">Todas las Anteriores</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">⚡</span>
+                                <p class="text-sm text-slate-700 font-medium">Opioides</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🏥</span>
+                                <p class="text-sm text-slate-700 font-medium">Técnicas Avanzadas</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-4 text-center">**Técnicas Avanzadas:** Procedimientos especializados para el manejo del dolor severo, como infusiones epidurales continuas, bloqueos nerviosos prolongados o bombas de analgesia controlada por el paciente (PCA).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="evaluacion" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0072B2] mb-8">Evaluación del Dolor: Dando Voz a Quienes no la Tienen</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-center mb-6 text-slate-700">La elección de la escala de dolor depende de la edad y la capacidad de comunicación del niño. Una evaluación precisa es el primer paso para un tratamiento efectivo.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="border-r-0 md:border-r md:pr-8 border-slate-200">
+                        <h3 class="text-2xl font-semibold text-[#00446A] mb-4 text-center">Pacientes Pre-Verbales (&lt; 3 años)</h3>
+                        <p class="text-center text-slate-600 mb-6">Para los más pequeños, se utilizan escalas observacionales que miden respuestas conductuales y fisiológicas.</p>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg">Escala <a href="https://www.mdcalc.com/calc/10545/face-legs-activity-cry-consolability-flacc-scale" target="_blank" class="text-blue-600 hover:underline">FLACC</a> (1997)</h4>
+                                <p class="text-sm text-slate-500 mb-2">Puntuación: 0-10. Componentes: Cara, Piernas, Actividad, Llanto, Consolabilidad.</p>
+                                <div class="chart-container max-w-xs mx-auto h-48">
+                                    <canvas id="flaccChart"></canvas>
+                                </div>
+                                <p class="text-center mt-2 text-sm text-slate-600">Ideal para dolor postoperatorio, pero puede confundirse con miedo o ansiedad.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Escala <a href="https://www.mdapp.co/cries-pain-scale-calculator-566/" target="_blank" class="text-blue-600 hover:underline">CRIES</a> (1995)</h4>
+                                <p class="text-sm text-slate-500 mb-2">Puntuación: 0-10. Específica para neonatos postoperatorios.</p>
+                                <div class="chart-container max-w-xs mx-auto h-48">
+                                    <canvas id="criesChart"></canvas>
+                                </div>
+                                <p class="text-center mt-2 text-sm text-slate-600">Integra signos vitales, pero pueden ser influenciados por otras condiciones médicas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-[#00446A] mb-4 text-center">Pacientes Verbales (> 3 años)</h3>
+                        <p class="text-center text-slate-600 mb-6">El autoinforme es el estándar de oro. Se utilizan herramientas visuales y numéricas.</p>
+                         <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg">Escala de Caras de <a href="https://www.google.com/search?q=wong+baker+scale&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKG1cRgcE0P7z3SNizmlu0Qk8MgiKsZ0mDOS2di7FnzoXfcyjU12QCbBvNbYCec27QfAqVXgiQyZkZmiQvMnPMdWP86qBtee_bmIQS3DL1R2duDeGevl755ZMAFCl4ugXi3r6QsiNA6XMH8XIonyXGvHPnL67EeJVaP06GGUbZ3PFXvAGog&sa=X&sqi=2&ved=2ahUKEwi89KHE0_6NAxVpJ7kGHb-kIxcQtKgLegQIFBAB&biw=1536&bih=695&dpr=1.25#vhid=PcSwHUV2cPm5VM&vssid=mosaic" target="_blank" class="text-blue-600 hover:underline">Wong-Baker</a> (1983)</h4>
+                                <p class="text-sm text-slate-500 mb-2">Puntuación: 0-10. El niño señala la cara que representa su dolor.</p>
+                                <div class="flex justify-between items-center p-4 bg-slate-100 rounded-lg">
+                                    <span class="text-3xl">🙂</span>
+                                    <span class="text-3xl">😊</span>
+                                    <span class="text-3xl">😐</span>
+                                    <span class="text-3xl">😕</span>
+                                    <span class="text-3xl">😢</span>
+                                    <span class="text-3xl">😭</span>
+                                </div>
+                                <p class="text-center mt-2 text-sm text-slate-600">Ventaja: muy visual. Desventaja: puede confundirse con emociones como la tristeza.</p>
+                            </div>
+                             <div>
+                                <h4 class="font-bold text-lg">Escala Numérica (NRS)</h4>
+                                <p class="text-sm text-slate-500 mb-2">Para niños mayores de 5 años. El paciente califica su dolor de 0 a 10.</p>
+                                 <div class="text-center bg-[#E69F00] text-white p-6 rounded-lg shadow-lg">
+                                     <span class="text-5xl font-bold">0 ↔ 10</span>
+                                     <p class="mt-2">"0 es sin dolor, 10 es el peor dolor imaginable"</p>
+                                 </div>
+                                <p class="text-center mt-2 text-sm text-slate-600">Ventaja: simple y rápida. Desventaja: unidimensional, solo mide intensidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center bg-slate-100 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-[#00446A] mb-4">Escalas descargables en español y color</h3>
+                    <p class="text-slate-600">Encuentra versiones descargables de las escalas de dolor pediátrico para tu práctica clínica:</p>
+                    <a href="https://campusvygon.com/cl/escalas-dolor-rn/" target="_blank" class="inline-block bg-[#0072B2] text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-blue-700 transition-colors">
+                        Acceder a Escalas
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tratamiento" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0072B2] mb-2">El Enfoque Multimodal</h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto text-center mb-8">Consiste en combinar fármacos con diferentes mecanismos de acción para maximizar la analgesia y minimizar los efectos secundarios, especialmente los de los opioides.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">1. No Opioides: La Primera Línea</h3>
+                    <p class="text-slate-600 mb-4">El paracetamol y los AINEs son la base de la analgesia multimodal. Su acción se centra en la inhibición de la enzima COX.</p>
+                    <div class="chart-container h-64">
+                        <canvas id="nonOpioidChart"></canvas>
+                    </div>
+                     <p class="text-sm text-slate-500 mt-4">El paracetamol destaca por su seguridad gastrointestinal, mientras que los AINEs ofrecen un potente efecto antiinflamatorio, crucial en dolores óseos o inflamatorios.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">2. Metamizol: Ventaja Espasmolítica</h3>
+                    <p class="text-slate-600 mb-4">Además de su potente efecto analgésico, el metamizol relaja la musculatura lisa, haciéndolo ideal para dolores de tipo cólico.</p>
+                    <div class="text-center p-4 bg-slate-100 rounded-lg">
+                        <span class="text-4xl">🌀</span>
+                        <p class="font-semibold text-lg mt-2">Eficaz en Dolor Cólico</p>
+                        <p class="text-sm text-slate-600">(Renal, Biliar, Intestinal)</p>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-semibold text-red-600">Riesgo a Considerar</p>
+                        <p class="text-2xl font-bold text-red-500">1.1 / millón</p>
+                        <p class="text-sm text-slate-500">Casos de Agranulocitosis (raro pero grave). Evitar en pacientes suceptibles (Anglosajones, Hematooncológicos o usuarios de medicamentos con potencial mielodisplásico como metotrexato o quimioterapia) </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">3. Corticoides: Rol Analgésico y Antiinflamatorio</h3>
+                    <p class="text-slate-600 mb-4">La Dexametasona y otros corticoides son potentes antiinflamatorios, útiles como coadyuvantes para reducir el dolor y el edema.</p>
+                    <div class="text-center p-4 bg-slate-100 rounded-lg">
+                        <span class="text-4xl">🧪</span>
+                        <p class="font-semibold text-lg mt-2">Cascada Inflamatoria</p>
+                        <div class="flex flex-col items-center text-slate-700 mt-4">
+                            <p class="font-bold">Lesión Celular</p>
+                            <div class="text-xl">↓</div>
+                            <p class="font-bold">Fosfolípidos de Membrana</p>
+                            <div class="flex items-center">
+                                <span class="text-xl">↓</span>
+                                <span class="ml-2 text-red-500 text-3xl">🚫</span>
+                                <span class="ml-1 text-red-600 font-bold">Corticoides</span>
+                            </div>
+                            <p class="font-bold">Fosfolipasa A2</p>
+                            <div class="text-xl">↓</div>
+                            <p class="font-bold">Ácido Araquidónico</p>
+                            <div class="text-xl">↓</div>
+                            <div class="flex justify-around w-full mt-2">
+                                <div class="flex flex-col items-center">
+                                    <p class="font-bold">COX</p>
+                                    <div class="text-xl">↓</div>
+                                    <p class="text-sm">Prostaglandinas</p>
+                                    <p class="text-sm">(Dolor, Inflamación)</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <p class="font-bold">LOX</p>
+                                    <div class="text-xl">↓</div>
+                                    <p class="text-sm">Leucotrienos</p>
+                                    <p class="text-sm">(Inflamación, Broncoconstricción)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-slate-600 mt-4 text-left">
+                        <li>**Mecanismo:** Inhibición de prostaglandinas y leucotrienos.</li>
+                        <li>**Rol:** Reduce inflamación y edema neural/peritumoral.</li>
+                        <li>**Ventajas:** Reduce náuseas postoperatorias y edema o inflamación de tejidos (vía aérea). Prolonga el efecto de bloqueos regionales.</li>
+                        <li>**Desventajas:** Hiperglicemia (diabéticos, poco significativo), inmunosupresión (uso prolongado), lisis tumoral en sd. linfoproliferativos.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">4. Antagonistas NMDA: Bloqueo Central</h3>
+                    <p class="text-slate-600 mb-4">La Ketamina y el Sulfato de Magnesio actúan sobre los receptores NMDA, previniendo la "sensibilización central" del dolor. Son claves en dolor neuropático.</p>
+                    <div class="chart-container h-64">
+                        <canvas id="nmdaChart"></canvas>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4">La ketamina es más potente pero con efectos psicodélicos e hipnóticos-sedantes. El magnesio es menos potente pero con un perfil de seguridad más favorable. Tener precaución en insuficiencia renal o asociación con bloqueadores neuromusculares.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">5. Anestésicos Locales: Analgesia de Precisión</h3>
+                    <p class="text-slate-600 mb-4">Bloquean los canales de sodio en los nervios periféricos, ofreciendo un alivio del dolor altamente localizado y reduciendo la necesidad de opioides.</p>
+                     <div class="chart-container h-64">
+                        <canvas id="localAnestheticsChart"></canvas>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4">La elección depende de la duración y efectos requeridos y el perfil de seguridad/toxicidad. El sitio de aplicación y la adición de epinefrina (no mostrada) modifican la absorción y por tanto pueden modificar la duración del efecto y la toxicidad de estos agentes.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">6. Adyuvantes para Dolor Neuropático</h3>
+                    <p class="text-slate-600 mb-4">Los Antidepresivos y Anticonvulsivantes modulan las vías del dolor a nivel central, siendo esenciales para el dolor crónico de origen nervioso.</p>
+                     <div class="chart-container h-64">
+                        <canvas id="neuropathicAdjuvantsChart"></canvas>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4">Los antidepresivos también tratan comorbilidades como la ansiedad. Los anticonvulsivantes son eficaces pero requieren una titulación lenta de la dosis.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">7. El Futuro: Inhibidores Selectivos</h3>
+                    <p class="text-slate-600 mb-4">La Suzetrigina es un fármaco oral no opioide que inhibe selectivamente el canal de sodio NaV1.8, presente solo en las neuronas del dolor periférico.</p>
+                    <div class="space-y-2 text-center p-4">
+                        <div class="p-2 bg-blue-100 rounded">Neurona Nociceptiva</div>
+                        <div class="text-2xl text-[#0072B2]">↓</div>
+                        <div class="p-2 bg-orange-100 border-2 border-orange-400 rounded relative">
+                            Canal de Sodio NaV1.8
+                            <span class="absolute -right-4 -top-4 text-4xl text-red-500">🚫</span>
+                            <span class="absolute -right-12 top-0 text-sm font-bold text-red-600">Suzetrigina</span>
+                        </div>
+                        <div class="text-2xl text-slate-300">↓</div>
+                         <div class="p-2 bg-slate-200 rounded">No hay señal de dolor al SNC</div>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4">Ventaja clave: analgesia potente sin los efectos secundarios del SNC ni el riesgo de adicción de los opioides. Aún sin datos pediátricos.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#00446A] mb-3">8. Opioides: Analgesia Potente</h3>
+                    <p class="text-slate-600 mb-4">Los opioides son los analgésicos más potentes, actuando sobre receptores específicos en el SNC para el dolor severo.</p>
+                    <div class="text-center p-4 bg-slate-100 rounded-lg flex flex-col items-center">
+                        <div class="chart-container h-48 w-full mb-4">
+                            <canvas id="opioidPotencyChart"></canvas>
+                        </div>
+                        <p class="font-semibold text-lg mt-2">Activación de Receptores μ</p>
+                        <ul class="list-disc list-inside text-sm text-slate-600 mt-2 text-left w-full">
+                            <li>**Mecanismo:** Agonistas de receptores μ-opioides.</li>
+                            <li>**Ejemplos:** Morfina, Fentanilo, Metadona, Tapentadol.</li>
+                            <li>**Ventajas:** Analgesia superior para dolor severo.</li>
+                            <li>**Desventajas:** Depresión respiratoria, apnea, íleo y retención urinaria, prurito, náuseas, sedación, riesgo de adicción.</li>
+                            <li>**Uso sólo desde adolescencia:** Tramadol, Codeína (dependen de metabolización y efecto no predecible).</li>
+                             <li>**Importante:** Deben usarse en unidades con monitorización adecuada y personal entrenado en el manejo de sus complicaciones.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="how-to-administer" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0072B2] mb-8">El "Cómo": Más allá del Qué en la Analgesia Pediátrica</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-center mb-6 text-slate-700">No solo importa *qué* fármaco usamos, sino *cómo* lo administramos. Un plan flexible y multimodal, adaptado a cada niño, es clave para el éxito.</p>
+                <div class="flex flex-col items-center justify-center space-y-8 mt-8">
+
+                    <div class="flex-1 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 border-t-4 border-[#00446A]">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">PLAN FLEXIBLE</h3>
+                        <p class="text-sm text-slate-600 mb-4 text-center">Un plan que se adapta y reevalúa constantemente según la evolución del paciente.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🔄</span>
+                                <p class="text-sm text-slate-700 font-medium">Reevaluación Constante</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🎯</span>
+                                <p class="text-sm text-slate-700 font-medium">Ajuste Individual</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 border-t-4 border-[#E69F00]">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">MULTIMODALIDAD</h3>
+                        <p class="text-sm text-slate-600 mb-4 text-center">Combinación de diferentes fármacos y técnicas con distintos mecanismos de acción.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">🧪</span>
+                                <p class="text-sm text-slate-700 font-medium">Múltiples Mecanismos</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span class="text-4xl">⬇️</span>
+                                <p class="text-sm text-slate-700 font-medium">Menos Efectos Adversos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 border-t-4 border-[#56B4E9]">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">VÍA Y ESQUEMA DE ADMINISTRACIÓN</h3>
+                        <p class="text-sm text-slate-600 mb-4 text-center">Seleccionar las vías más seguras, confortables, factibles y efectivas, y los esquemas que mejor se adapten al dolor.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">👄</span>
+                                <p class="text-sm text-slate-700 font-medium">Vía Oral</p>
+                                <p class="text-xs text-slate-500">Menos invasiva y simple. Gotas, Jarabes, cápsulas, comprimidos.</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">💉</span>
+                                <p class="text-sm text-slate-700 font-medium">Vía Intravenosa / IM</p>
+                                <p class="text-xs text-slate-500">Acción rápida y efectiva, pero invasiva.</p>
+                            </div>
+                             <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">💉</span>
+                                <p class="text-sm text-slate-700 font-medium">Vía Subcutánea (SC)</p>
+                                <p class="text-xs text-slate-500">Acción sistémica lenta y predecible, menos invasiva.</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">💊</span>
+                                <p class="text-sm text-slate-700 font-medium">Vía Rectal (Supositorio)</p>
+                                <p class="text-xs text-slate-500">Opción si vía oral no es posible. Riesgo de absorción errática y sobredosis.</p>
+                            </div>
+                             <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">🌐</span>
+                                <p class="text-sm text-slate-700 font-medium">Bloqueos Regionales (periféricos y neuroaxiales)</p>
+                                <p class="text-xs text-slate-500">Analgesia localizada y efectiva, pero invasiva. Reduce necesidad de analgesia sistémica (ej. opioides).</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">⏰</span>
+                                <p class="text-sm text-slate-700 font-medium">Esquemas de administración combinados</p>
+                                <p class="text-xs text-slate-500">Horario, Continuo y/o PCA + Rescate (SOS).</p>
+                            </div>
+                        </div>
+                         <p class="text-xs text-red-500 mt-4 text-center font-semibold">"Siempre con SOS, pero NUNCA SOS exclusivo."</p>
+                         <p class="text-xs text-red-500 mt-4 text-center font-semibold">"Continuo (BIC) no es mejor que horario bien programado."</p>
+                         <p class="text-xs text-red-500 mt-4 text-center font-semibold">"PCA requiere "dosis de carga" y sirve de mantención pero no de iniciación."</p>
+
+                    </div>
+
+                    <div class="flex-1 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 border-t-4 border-[#F0E442]">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">ENFOQUE INDIVIDUALIZADO</h3>
+                        <p class="text-sm text-slate-600 mb-4 text-center">Adaptar el tratamiento a las características únicas de cada paciente y el tipo de dolor.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">👶👵</span>
+                                <p class="text-sm text-slate-700 font-medium">Edad y Desarrollo</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">🧬</span>
+                                <p class="text-sm text-slate-700 font-medium">Función Orgánica y Comorbilidades</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">🤧</span>
+                                <p class="text-sm text-slate-700 font-medium">Alergias e Intolerancias</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center bg-slate-50 p-3 rounded-lg">
+                                <span class="text-4xl">📈</span>
+                                <p class="text-sm text-slate-700 font-medium">Intensidad y Tipo de Dolor (Somático, Visceral, Neuropático, Mixto)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="recommendations-to-avoid" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0072B2] mb-8">Recomendaciones a Evitar en el Manejo del Dolor Pediátrico</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-center mb-6 text-slate-700">Para optimizar la seguridad y eficacia de la analgesia pediátrica, es crucial evitar ciertas prácticas.</p>
+                <ul class="list-none space-y-4 text-slate-700">
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Combinar COX-2 selectivo con COX no selectivo:</strong> No aporta beneficio analgésico adicional y aumenta los riesgos de efectos adversos.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Usar Paracetamol SOS en dolor moderado-severo:</strong> El paracetamol por sí solo tiene un efecto limitado en estos niveles de dolor y retrasar la analgesia adecuada es perjudicial.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Suspender analgésicos coadyuvantes por el uso de PCA, anestesia regional u otra modalidad analgésica:</strong> La multimodalidad es clave; estos fármacos actúan por diferentes mecanismos y son complementarios, no sustitutos.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Usar solo analgésicos en modalidad SOS:</strong> Especialmente en dolor moderado a severo, un esquema horario con rescates es fundamental para un control sostenido del dolor.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Prolongar el uso de AINEs más de 5 días (idealmente &le; 3 días):</strong> El uso prolongado aumenta significativamente los riesgos gastrointestinales, renales y cardiovasculares.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Usar AINEs en menores de 3-6 meses o con disfunción renal/hepática o patología inflamatoria digestiva:</strong> Estas condiciones aumentan el riesgo de toxicidad y complicaciones graves.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Usar esquemas inflexibles de alivio de dolor o exclusivamente un grupo de fármacos en dolor moderado o severo:</strong> El dolor pediátrico requiere un plan adaptativo y multimodal para ser eficaz.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 text-2xl mr-3 mt-1">❌</span>
+                        <p><strong>Limitar la analgesia a un solo mecanismo de acción (¡hay más que AINEs!):</strong> La analgesia multimodal aprovecha múltiples vías para un alivio superior y menos efectos adversos.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="when-to-seek-help" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0072B2] mb-8">¿Cuándo pedir ayuda en el manejo del dolor?</h2>
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <p class="text-center mb-6 text-slate-700">La intervención temprana de un equipo especializado puede mejorar significativamente el pronóstico del dolor en pediatría.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-100 rounded-lg p-4 flex items-center shadow-sm">
+                        <span class="text-3xl mr-4 text-blue-500">⏳</span>
+                        <p class="text-slate-700 font-semibold">1) Pacientes con dolor crónico</p>
+                    </div>
+                    <div class="bg-slate-100 rounded-lg p-4 flex items-center shadow-sm">
+                        <span class="text-3xl mr-4 text-green-500">🔗</span>
+                        <p class="text-slate-700 font-semibold">2) Usuarios de opioides crónicos</p>
+                    </div>
+                    <div class="bg-slate-100 rounded-lg p-4 flex items-center shadow-sm">
+                        <span class="text-3xl mr-4 text-red-500">🚫</span>
+                        <p class="text-slate-700 font-semibold">3) Dolor refractario a analgesia multimodal sistémica</p>
+                    </div>
+                    <div class="bg-slate-100 rounded-lg p-4 flex items-center shadow-sm">
+                        <span class="text-3xl mr-4 text-purple-500">🔬</span>
+                        <p class="text-slate-700 font-semibold">4) Necesidad de manejo intervencional</p>
+                    </div>
+                    <div class="bg-slate-100 rounded-lg p-4 flex items-center shadow-sm">
+                        <span class="text-3xl mr-4 text-yellow-500">⚠️</span>
+                        <p class="text-slate-700 font-semibold">5) Alergias, intolerancia o contraindicación a múltiples analgésicos</p>
+                    </div>
+                    <div class="bg-slate-100 rounded-lg p-4 flex items-center shadow-sm">
+                        <span class="text-3xl mr-4 text-gray-500">🎗️</span>
+                        <p class="text-slate-700 font-semibold">6) Dolor oncológico</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-center text-[#00446A] mb-6">¿A quién acudir? Equipo Multidisciplinario</h3>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-center mb-6 text-slate-700">El manejo integral del dolor pediátrico a menudo requiere la colaboración de diversos especialistas.</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="text-center p-4 bg-blue-50 rounded-lg shadow-sm">
+                        <span class="text-4xl">👨‍⚕️</span>
+                        <p class="text-slate-700 font-semibold mt-2">Anestesiólogo</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-lg shadow-sm">
+                        <span class="text-4xl">🧠</span>
+                        <p class="text-slate-700 font-semibold mt-2">Psiquiatra/Psicólogo</p>
+                    </div>
+                    <div class="text-center p-4 bg-orange-50 rounded-lg shadow-sm">
+                        <span class="text-4xl">💪</span>
+                        <p class="text-slate-700 font-semibold mt-2">Fisiatra</p>
+                    </div>
+                    <div class="text-center p-4 bg-purple-50 rounded-lg shadow-sm">
+                        <span class="text-4xl">🌟</span>
+                        <p class="text-slate-700 font-semibold mt-2">Paliativios/Onco-Radioterapeuta</p>
+                    </div>
+                    <div class="text-center p-4 bg-yellow-50 rounded-lg shadow-sm">
+                        <span class="text-4xl">🤝</span>
+                        <p class="text-sm text-slate-700 font-semibold mt-2">Otros especialistas (ej. Quirúrgicas)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-12 pt-8 border-t border-slate-200">
+            <h3 class="text-2xl font-bold text-[#00446A] mb-4">Hacia un Futuro sin Dolor para los Niños</h3>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                La gestión exitosa del dolor pediátrico combina una evaluación precisa y continua con un tratamiento multimodal e individualizado. La investigación constante y la educación de los profesionales y cuidadores son fundamentales para garantizar que cada niño reciba un cuidado compasivo y eficaz.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        function wrapLabel(str, max_width) {
+            if (typeof str !== 'string' || str.length <= max_width) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let current_line = '';
+            for (const word of words) {
+                if ((current_line + ' ' + word).trim().length > max_width && current_line.length > 0) {
+                    lines.push(current_line);
+                    current_line = word;
+                } else {
+                    current_line = (current_line + ' ' + word).trim();
+                }
+            }
+            if (current_line.length > 0) {
+                lines.push(current_line);
+            }
+            return lines;
+        }
+
+        const commonTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    position: 'bottom',
+                }
+            }
+        };
+
+        const palette = {
+            darkBlue: '#00446A',
+            mediumBlue: '#0072B2',
+            lightBlue: '#56B4E9',
+            orange: '#E69F00',
+            yellow: '#F0E442',
+            slate: '#64748b',
+            darkRed: '#CC0000'
+        };
+
+        new Chart(document.getElementById('flaccChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Cara', 'Piernas', 'Actividad', 'Llanto', 'Consolabilidad'],
+                datasets: [{
+                    label: 'Componentes FLACC',
+                    data: [1, 1, 1, 1, 1],
+                    backgroundColor: [palette.darkBlue, palette.mediumBlue, palette.lightBlue, palette.orange, palette.yellow],
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: '5 Componentes Observacionales' }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('criesChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Llanto', 'Req. O2', 'Signos Vitales', 'Expresión', 'Insomnio'],
+                datasets: [{
+                    label: 'Componentes CRIES',
+                    data: [1, 1, 1, 1, 1],
+                    backgroundColor: [palette.darkBlue, palette.mediumBlue, palette.lightBlue, palette.orange, palette.yellow],
+                     borderWidth: 2,
+                     borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: '5 Componentes Fisiológicos y Conductuales' }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('nonOpioidChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Paracetamol', 'AINEs (ej. Ibuprofeno)'],
+                datasets: [
+                    {
+                        label: 'Efecto Analgésico',
+                        data: [8, 9],
+                        backgroundColor: palette.mediumBlue,
+                    },
+                    {
+                        label: 'Efecto Antiinflamatorio',
+                        data: [2, 9],
+                        backgroundColor: palette.lightBlue,
+                    },
+                    {
+                        label: 'Riesgo Gastrointestinal',
+                        data: [1, 7],
+                        backgroundColor: palette.orange,
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { stacked: true, display: false },
+                    y: { stacked: true }
+                },
+                ...commonTooltipCallback
+            }
+        });
+        
+        new Chart(document.getElementById('nmdaChart'), {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Ketamina',
+                    data: [{x: 9, y: 9, r: 8}],
+                    backgroundColor: palette.darkBlue
+                }, {
+                    label: 'Sulfato de Magnesio',
+                    data: [{x: 5, y: 4, r: 4}],
+                    backgroundColor: palette.orange
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Potencia Analgésica' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Efecto Sedante' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                         callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += `(Potencia: ${context.parsed.x}, Sedación: ${context.parsed.y}, Riesgo CV: ${context.raw.r})`;
+                                return label;
+                            }
+                        }
+                    },
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('localAnestheticsChart'), {
+            type: 'line',
+            data: {
+                labels: ['0h', '1h', '2h', '3h', '4h', '5h', '6h'],
+                datasets: [
+                    {
+                        label: 'Lidocaína',
+                        data: [10, 8, 5, 2, 0, 0, 0],
+                        borderColor: palette.lightBlue,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Mepivacaína',
+                        data: [10, 9, 6, 3, 1, 0, 0],
+                        borderColor: palette.orange,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Bupivacaína / Ropivacaína',
+                        data: [10, 10, 9, 8, 6, 4, 2],
+                        borderColor: palette.darkBlue,
+                        tension: 0.1
+                    }
+                ]
+            },
+            options: {
+                 responsive: true,
+                maintainAspectRatio: false,
+                 scales: {
+                    y: {
+                        title: { display: true, text: 'Efecto Analgésico Relativo' },
+                        min: 0,
+                        max: 11
+                    }
+                },
+                ...commonTooltipCallback
+            }
+        });
+
+        new Chart(document.getElementById('neuropathicAdjuvantsChart'), {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Eficacia Dolor Neuropático', 
+                    wrapLabel('Trata Comorbilidades (Ansiedad)', 16),
+                    wrapLabel('Efectos Adversos SNC', 16), 
+                    'Rapidez de Acción',
+                    'Necesidad de Titulación'
+                ],
+                datasets: [{
+                    label: 'Antidepresivos (ATC/IRSN)',
+                    data: [8, 9, 6, 3, 7],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 114, 178, 0.2)',
+                    borderColor: palette.mediumBlue,
+                    pointBackgroundColor: palette.mediumBlue,
+                }, {
+                    label: 'Anticonvulsivantes (Gabapentinoides)',
+                    data: [9, 3, 7, 4, 9],
+                    fill: true,
+                    backgroundColor: 'rgba(230, 159, 0, 0.2)',
+                    borderColor: palette.orange,
+                    pointBackgroundColor: palette.orange,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...commonTooltipCallback
+            }
+        });
+
+        new Chart(document.getElementById('opioidPotencyChart'), {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Potencia Analgésica', 16), wrapLabel('Riesgo Depresión Respiratoria/Apnea', 16), wrapLabel('Náuseas, prurito, íleo', 16), wrapLabel('Necesidad de monitorización', 16)],
+                datasets: [{
+                    label: 'Opioides',
+                    data: [10, 7, 4, 10],
+                    backgroundColor: [palette.darkBlue, palette.orange, palette.mediumBlue, palette.darkRed],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 10,
+                        display: false
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Potencia vs. Riesgos'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
