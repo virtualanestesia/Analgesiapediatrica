@@ -749,9 +749,18 @@
         import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, updateDoc, doc, increment, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // Variables globales para Firebase (proporcionadas por el entorno de Canvas)
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        const firebaseConfig = {
+          apiKey: "AIzaSyCu6-yPb3aT_ckHxHcyRDEYxLMYdw4yLtQ",
+          authDomain: "infografiadolorpediatrico.firebaseapp.com",
+          projectId: "infografiadolorpediatrico",
+          storageBucket: "infografiadolorpediatrico.firebasestorage.app",
+          messagingSenderId: "693134026673",
+          appId: "1:693134026673:web:78122e5831332b66973f90",
+          measurementId: "G-XMFTR61S0K"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
 
         let db; // Instancia de Firestore
         let auth; // Instancia de Auth
