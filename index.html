@@ -544,7 +544,163 @@
                 </div>
             </div>
         </section>
-        
+     <!-- Nueva Sección de Herramientas Interactivas -->
+        <section id="comentarios-preguntas" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0072B2] mb-8">COMENTARIOS Y HERRAMIENTAS INTERACTIVAS</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-center mb-6 text-slate-700">Explora estas herramientas interactivas diseñadas para potenciar tu conocimiento y práctica en el manejo del dolor pediátrico.</p>
+                <p class="text-center mb-6 text-red-700 font-semibold">¡Las preguntas más votadas serán resueltas a lo largo de la jornada!</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    <!-- Sección 1: Casos Clínicos Interactivos con Toma de Decisiones -->
+                    <div class="bg-slate-50 rounded-lg shadow-sm p-6">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Casos Clínicos Interactivos 🩺</h3>
+                        <p class="text-slate-700 mb-6 text-center">Analiza un caso y toma decisiones sobre la evaluación y analgesia. Obtén retroalimentación.</p>
+                        
+                        <div class="border border-slate-200 rounded-lg p-4 mb-4">
+                            <p class="font-semibold text-lg mb-2">Caso: Niño de 4 años, post-amigdalectomía, se muestra irritable y no quiere comer. Sus padres reportan que no ha dormido bien.</p>
+                            <p class="mb-4">¿Qué escala de dolor sería la más adecuada para evaluar a este paciente?</p>
+                            
+                            <div class="flex flex-col space-y-2">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio text-[#0072B2]" name="case1_q1" value="wongBaker" id="case1_wongBaker">
+                                    <span class="ml-2 text-slate-700">Escala de Caras de Wong-Baker</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio text-[#0072B2]" name="case1_q1" value="flacc" id="case1_flacc">
+                                    <span class="ml-2 text-slate-700">Escala FLACC</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio text-[#0072B2]" name="case1_q1" value="nrs" id="case1_nrs">
+                                    <span class="ml-2 text-slate-700">Escala Numérica (NRS)</span>
+                                </label>
+                            </div>
+                            
+                            <button id="checkCase1" class="mt-4 bg-[#00446A] text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+                                Verificar Respuesta
+                            </button>
+                            <div id="feedbackCase1" class="mt-4 p-3 rounded-md hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Sección 2: "Construye tu Plan Multimodal" (Simulador) -->
+                    <div class="bg-slate-50 rounded-lg shadow-sm p-6">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Construye tu Plan Multimodal 🛠️</h3>
+                        <p class="text-slate-700 mb-6 text-center">Ingresa los datos del paciente para obtener una sugerencia de plan analgésico multimodal.</p>
+
+                        <div class="space-y-4 mb-6">
+                            <div>
+                                <label for="painLevel" class="block text-slate-700 font-semibold mb-2">Nivel de Dolor:</label>
+                                <select id="painLevel" class="w-full p-2 border border-slate-300 rounded-md">
+                                    <option value="leve">Leve</option>
+                                    <option value="moderado">Moderado</option>
+                                    <option value="severo">Severo</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="ageGroup" class="block text-slate-700 font-semibold mb-2">Grupo de Edad:</label>
+                                <select id="ageGroup" class="w-full p-2 border border-slate-300 rounded-md">
+                                    <option value="preVerbal">Pre-verbal (&lt; 3 años)</option>
+                                    <option value="verbal">Verbal (&ge; 3 años)</option>
+                                </select>
+                            </div>
+                             <div>
+                                <label for="painType" class="block text-slate-700 font-semibold mb-2">Tipo de Dolor:</label>
+                                <select id="painType" class="w-full p-2 border border-slate-300 rounded-md">
+                                    <option value="somático">Somático</option>
+                                    <option value="visceral">Visceral</option>
+                                    <option value="neuropático">Neuropático</option>
+                                    <option value="mixto">Mixto</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button id="generatePlan" class="w-full bg-[#E69F00] text-white py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors">
+                            Generar Plan
+                        </button>
+
+                        <div id="planOutput" class="mt-6 p-4 bg-slate-100 rounded-md hidden">
+                            <h3 class="font-bold text-[#00446A] mb-2">Plan Sugerido:</h3>
+                            <p id="planText" class="text-slate-700"></p>
+                        </div>
+                    </div>
+
+                    <!-- Sección 3: "Mitos vs. Realidades" del Dolor Pediátrico (Tarjetas Interactivas) -->
+                    <div class="lg:col-span-2 bg-slate-50 rounded-lg shadow-sm p-6">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Mitos vs. Realidades del Dolor Pediátrico 💡</h3>
+                        <p class="text-slate-700 mb-6 text-center">Haz clic en las tarjetas para descubrir la realidad detrás de las afirmaciones comunes.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="flip-card-container">
+                                <div class="flip-card flip-card-inner" tabindex="0">
+                                    <div class="flip-card-front">
+                                        <span class="text-6xl mb-2">👶</span>
+                                        <p class="text-lg font-semibold">"Los bebés no sienten dolor igual que los adultos."</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p class="text-lg font-bold">REALIDAD</p>
+                                        <p class="text-sm mt-2">Los recién nacidos y lactantes sienten dolor de forma plena, y la exposición al dolor sin tratar puede tener consecuencias a largo plazo en su desarrollo neurológico y respuesta al estrés.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card-container">
+                                <div class="flip-card flip-card-inner" tabindex="0">
+                                    <div class="flip-card-front">
+                                        <span class="text-6xl mb-2">⚡</span>
+                                        <p class="text-lg font-semibold">"Los opioides siempre causan adicción en niños."</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p class="text-lg font-bold">REALIDAD</p>
+                                        <p class="text-sm mt-2">El riesgo de adicción a opioides cuando se usan para el manejo del dolor agudo en un entorno hospitalario es extremadamente bajo en niños. El dolor no tratado es un riesgo mayor.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card-container">
+                                <div class="flip-card flip-card-inner" tabindex="0">
+                                    <div class="flip-card-front">
+                                        <span class="text-6xl mb-2">🤫</span>
+                                        <p class="text-lg font-semibold">"Si el niño no se queja, no tiene dolor."</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p class="text-lg font-bold">REALIDAD</p>
+                                        <p class="text-sm mt-2">Los niños pueden no verbalizar su dolor por miedo, por querer ser "valientes", o por no saber cómo expresarlo. Los cambios en el comportamiento son indicadores clave.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección 4: Simulador de Evaluación del Dolor (Mini-Juego) -->
+                    <div class="lg:col-span-2 bg-slate-50 rounded-lg shadow-sm p-6">
+                        <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Simulador de Evaluación del Dolor 📈</h3>
+                        <p class="text-slate-700 mb-6 text-center">Elige la escala más adecuada para evaluar el dolor en este caso.</p>
+
+                        <div class="text-center mb-6">
+                            <p class="text-sm text-slate-600 mb-2">Escenario: Niño de 1 año después de una caída, tiene la pierna roja e hinchada y llora sin consuelo.</p>
+                            <span id="childFace" class="text-8xl">😢</span>
+                        </div>
+
+                        <div class="flex flex-col space-y-2">
+                            <button class="evaluate-button bg-[#56B4E9] text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors" data-scale="flacc">
+                                Usar Escala FLACC
+                            </button>
+                            <button class="evaluate-button bg-[#56B4E9] text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors" data-scale="cries">
+                                Usar Escala CRIES
+                            </button>
+                            <button class="evaluate-button bg-[#56B4E9] text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors" data-scale="wongBaker">
+                                Usar Escala de Caras de Wong-Baker
+                            </button>
+                        </div>
+                        <div id="evaluationFeedback" class="mt-4 p-3 rounded-md hidden"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <footer class="text-center mt-12 pt-8 border-t border-slate-200">
             <h3 class="text-2xl font-bold text-[#00446A] mb-4">Hacia un Futuro sin Dolor para los Niños</h3>
             <p class="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -722,7 +878,7 @@
                             }
                         }
                     },
-                    legend: { position: 'bottom' }
+                    legend: { position: 'bottom', }
                 }
             }
         });
@@ -849,6 +1005,109 @@
                     }
                 }
             }
+        });
+
+        // Lógica para Casos Clínicos Interactivos
+        document.getElementById('checkCase1').addEventListener('click', () => {
+            const feedbackDiv = document.getElementById('feedbackCase1');
+            const selectedOption = document.querySelector('input[name="case1_q1"]:checked');
+            
+            if (selectedOption) {
+                if (selectedOption.value === 'flacc') {
+                    feedbackDiv.className = 'mt-4 p-3 rounded-md bg-green-100 text-green-800';
+                    feedbackDiv.textContent = '¡Correcto! La escala FLACC es ideal para este niño de 4 años postoperatorio, ya que es observacional y evalúa su comportamiento. Podría combinarse con otras escalas dependiendo del grado de colaboración del niño.';
+                } else {
+                    feedbackDiv.className = 'mt-4 p-3 rounded-md bg-red-100 text-red-800';
+                    feedbackDiv.textContent = 'No del todo correcto. La Escala de Caras podría ser confusa si está irritable/triste, y la NRS no es adecuada para esta edad si no coopera. FLACC es mejor para postoperatorios en pacientes irritables o poco comunicativos.';
+                }
+                feedbackDiv.classList.remove('hidden');
+            } else {
+                feedbackDiv.className = 'mt-4 p-3 rounded-md bg-yellow-100 text-yellow-800';
+                feedbackDiv.textContent = 'Por favor, selecciona una opción.';
+                feedbackDiv.classList.remove('hidden');
+            }
+        });
+
+        // Lógica para "Construye tu Plan Multimodal"
+        document.getElementById('generatePlan').addEventListener('click', () => {
+            const painLevel = document.getElementById('painLevel').value;
+            const ageGroup = document.getElementById('ageGroup').value;
+            const painType = document.getElementById('painType').value;
+            const planOutput = document.getElementById('planOutput');
+            const planText = document.getElementById('planText');
+            
+            let plan = "Tu plan sugerido es: ";
+
+            if (painLevel === 'leve') {
+                plan += "Paracetamol o AINEs. Considera técnicas no farmacológicas.";
+            } else if (painLevel === 'moderado') {
+                plan += "Paracetamol + AINEs. Coadyuvantes (ej. Ketamina si hay componente neuropático). Considera anestésicos locales.";
+                if (ageGroup === 'preVerbal') {
+                    plan += " Evaluación con escalas observacionales (FLACC/CRIES).";
+                } else {
+                    plan += " Evaluación con escala de Caras o NRS.";
+                }
+            } else if (painLevel === 'severo') {
+                plan += "Opioides + Paracetamol + AINEs. Coadyuvantes y técnicas avanzadas (bloqueos regionales).";
+                 if (ageGroup === 'preVerbal') {
+                    plan += " Evaluación continua con escalas observacionales (FLACC/CRIES).";
+                } else {
+                    plan += " Evaluación continua con escala de Caras o NRS.";
+                }
+            }
+
+            if (painType === 'neuropático' || painType === 'mixto') {
+                plan += " Adicionalmente, considera antidepresivos o anticonvulsivantes si el dolor persiste o tiene características neuropáticas.";
+            }
+            plan += " Siempre bajo monitorización adecuada y adaptado a las características individuales del paciente.";
+
+            planText.textContent = plan;
+            planOutput.classList.remove('hidden');
+        });
+
+        // Lógica para "Mitos vs. Realidades"
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('is-flipped');
+            });
+            // Habilitar interacción con teclado para accesibilidad
+            card.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.toggle('is-flipped');
+                }
+            });
+        });
+
+        // Lógica para Simulador de Evaluación del Dolor
+        document.querySelectorAll('.evaluate-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const selectedScale = e.target.dataset.scale;
+                const feedbackDiv = document.getElementById('evaluationFeedback');
+                const childFace = document.getElementById('childFace');
+
+                let feedbackText = "";
+                let feedbackClass = "";
+
+                // Cambiar la cara del niño y dar feedback según la escala
+                if (selectedScale === 'flacc') {
+                    childFace.textContent = '😟'; // Expresión de dolor evaluable
+                    feedbackText = '¡Buena elección! Para un niño de 1 año, la escala FLACC es muy adecuada ya que se basa en la observación del comportamiento.';
+                    feedbackClass = 'bg-green-100 text-green-800';
+                } else if (selectedScale === 'cries') {
+                    childFace.textContent = '😩'; // Expresión de dolor con esfuerzo
+                    feedbackText = 'La escala CRIES es más específica para neonatos y lactantes, integrando signos vitales. Podría ser útil, pero FLACC es más general para pre-verbales.';
+                    feedbackClass = 'bg-yellow-100 text-yellow-800';
+                } else if (selectedScale === 'wongBaker') {
+                    childFace.textContent = '😢'; // Expresión de llanto o tristeza
+                    feedbackText = 'Para un niño de 1 año, la escala de Caras de Wong-Baker no es la más adecuada, ya que requiere que el niño entienda las expresiones y señale. Es mejor para niños verbales mayores de 3 años.';
+                    feedbackClass = 'bg-red-100 text-red-800';
+                }
+
+                feedbackDiv.className = `mt-4 p-3 rounded-md ${feedbackClass}`;
+                feedbackDiv.textContent = feedbackText;
+                feedbackDiv.classList.remove('hidden');
+            });
         });
     </script>
 </body>
